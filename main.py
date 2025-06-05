@@ -35,6 +35,6 @@ async def upload_pdf(user_id: str = Form(...), file: UploadFile = File(...)):
     with open(file.filename, "wb") as f:
         f.write(contents)
     
-    text = extract_text_from_pdf(file.filename)
+    text = extract_text_from_pdf_bytes(file.filename)
     store_pdf_in_vectorstore(text, user_id)
     return {"success": True, "message": "PDF uploaded and processed"}
