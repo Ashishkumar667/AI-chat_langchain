@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from pydantic import BaseModel
 from agent import get_user_agent
 from fastapi import File, UploadFile
-from utils.pdf_loader import extract_text_from_pdf
+from utils.pdf_loader import extract_text_from_pdf_bytes
 from vectorstore import store_pdf_in_vectorstore
 from fastapi import Form
 
